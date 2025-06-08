@@ -1,0 +1,35 @@
+[States]
+q0
+q1
+q2
+q3
+qd
+End
+
+[Sigma]
+0
+1
+End
+
+[Stack Sigma]
+0
+$
+End 
+
+[Rules]
+q0, epsilon, epsilon, $, q1
+q1, 0, epsilon, 0, q1
+q1, 1, 0, epsilon, q2 
+q2, 0, epsilon, epsilon, qd 
+q2, 1, 0, epsilon, q2 
+q2, 1, $, epsilon, qd 
+q2, epsilon, $, epsilon, q3
+End
+
+[Start]
+q0
+End
+
+[Accept]
+q3
+End
