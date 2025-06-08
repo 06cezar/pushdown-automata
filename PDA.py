@@ -197,7 +197,7 @@ def parseFile(inputPDAFile):
     inputPDAFile.close()
     
     PDA = states, sigma, stackSigma, rules, start, accept
-    printPDADataStructures(PDA)
+    # printPDADataStructures(PDA)
     if not isPDAValid(PDA):
         return False 
     else:

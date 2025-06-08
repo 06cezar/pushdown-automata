@@ -1,0 +1,55 @@
+/*
+            Secret Room
+                |
+                |
+ Kitchen-----Hallway-----Library
+  Spoon         |           |
+                |           |
+            Entrance       Exit SPOON NEEDED
+*/
+# possible winning input UP LEFT PICK RIGHT RIGHT DOWN
+
+[States]
+Entrance
+Hallway
+Kitchen
+Library 
+Secret Room
+Exit
+End
+
+[Stack Sigma]
+$
+SPOON
+End
+
+[Sigma]
+UP
+DOWN
+LEFT
+RIGHT
+PICK
+End
+
+[Rules]
+Entrance, epsilon, epsilon, $, Entrance
+Entrance, UP, epsilon, epsilon, Hallway
+Hallway, LEFT, epsilon, epsilon, Kitchen
+Hallway, RIGHT, epsilon, epsilon, Library
+Hallway, UP, epsilon, epsilon, Secret Room
+Hallway, DOWN, epsilon, epsilon, Entrance
+Kitchen, RIGHT, epsilon, epsilon, Hallway
+Kitchen, PICK, epsilon, SPOON, Kitchen # you can get as many spoon as you want from the kitchen :)
+Secret Room, DOWN, epsilon, epsilon, Hallway
+Library, LEFT, epsilon, epsilon, Hallway 
+Library, DOWN, SPOON, SPOON, Exit
+Exit, UP, epsilon, epsilon, Library
+End
+
+[Start]
+Entrance
+End
+
+[Accept]
+Exit
+End

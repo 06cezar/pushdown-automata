@@ -62,11 +62,11 @@ else:
         changeDirectory(inputFolder)
         inputStringFile = open(sys.argv[2], "r")
         os.chdir("..")
-        if len(sys.argv) == 4: 
+        if len(sys.argv) >= 4: 
             allowVerbosity = bool(int(sys.argv[3])) # 1 or 0 if i want all intermediate steps printed to the output or not
         else:
             allowVerbosity = False # verbosity disabled by default
-        if len(sys.argv) == 5:
+        if len(sys.argv) >= 5:
             if (sys.argv[4]).upper() == "SPACE":
                 stringSeparator = " "
             elif (sys.argv[4]).upper() == "NOSEPARATOR":
